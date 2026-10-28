@@ -10,7 +10,7 @@ namespace SistemaInventario
 
         static void Main(string[] args)
         {
-            // Cargar los datos guardados anteriormente
+            
             try
             {
                 inventario = GestorArchivos.Cargar();
@@ -101,10 +101,6 @@ namespace SistemaInventario
             } while (opcion != 0);
         }
 
-        // ==========================================
-        // 1. REGISTRAR PRODUCTO
-        // ==========================================
-
         static void RegistrarProducto()
         {
             Console.WriteLine("\n--- REGISTRAR PRODUCTO ---");
@@ -154,10 +150,6 @@ namespace SistemaInventario
             Console.WriteLine("Producto registrado correctamente.");
         }
 
-        // ==========================================
-        // 3. BUSCAR PRODUCTO
-        // ==========================================
-
         static void BuscarProducto()
         {
             Console.WriteLine("\n--- BUSCAR PRODUCTO ---");
@@ -193,9 +185,6 @@ namespace SistemaInventario
             }
         }
 
-        // ==========================================
-        // 4. ACTUALIZAR PRODUCTO
-        // ==========================================
 
         static void ActualizarProducto()
         {
@@ -236,10 +225,6 @@ namespace SistemaInventario
             Console.WriteLine("Producto actualizado correctamente.");
         }
 
-        // ==========================================
-        // 5. ELIMINAR PRODUCTO
-        // ==========================================
-
         static void EliminarProducto()
         {
             Console.WriteLine("\n--- ELIMINAR PRODUCTO ---");
@@ -273,9 +258,6 @@ namespace SistemaInventario
             }
         }
 
-        // ==========================================
-        // 6. REGISTRAR COMPRA
-        // ==========================================
 
         static void RegistrarCompra()
         {
@@ -308,9 +290,7 @@ namespace SistemaInventario
                 $"Nuevo stock: {producto.Stock}");
         }
 
-        // ==========================================
-        // 7. REGISTRAR VENTA
-        // ==========================================
+
 
         static void RegistrarVenta()
         {
@@ -346,9 +326,7 @@ namespace SistemaInventario
             Console.WriteLine($"Stock restante: {producto.Stock}");
         }
 
-        // ==========================================
-        // 8. CONSULTAR KARDEX
-        // ==========================================
+
 
         static void ConsultarKardex()
         {
@@ -359,9 +337,6 @@ namespace SistemaInventario
             inventario.MostrarKardex(codigo);
         }
 
-        // ==========================================
-        // 9. REPORTE DE VENTAS
-        // ==========================================
 
         static void ReporteVentas()
         {
@@ -375,10 +350,6 @@ namespace SistemaInventario
 
             inventario.ReporteVentas(desde, hasta);
         }
-
-        // ==========================================
-        // MÉTODOS AUXILIARES
-        // ==========================================
 
         static string LeerTexto(string mensaje)
         {

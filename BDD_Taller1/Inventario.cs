@@ -17,7 +17,7 @@ namespace BDD_Taller1
         public IReadOnlyList<Movimiento> Movimientos =>
             movimientos.AsReadOnly();
 
-        // CREATE
+        
         public void AgregarProducto(Producto producto)
         {
             if (producto == null)
@@ -36,7 +36,7 @@ namespace BDD_Taller1
             productos.Add(producto);
         }
 
-        // READ
+       
         public Producto? BuscarProducto(string codigo)
         {
             return productos.FirstOrDefault(p =>
@@ -55,7 +55,7 @@ namespace BDD_Taller1
             }
         }
 
-        // UPDATE
+        
         public void ActualizarProducto(
             string codigo, string nombre, decimal precio,
             DateTime? fecha = null, int? garantia = null)
@@ -82,7 +82,7 @@ namespace BDD_Taller1
                 noPerecible.MesesGarantia = garantia!.Value;
         }
 
-        // DELETE
+        
         public void EliminarProducto(string codigo)
         {
             var p = ObtenerProducto(codigo);
@@ -103,7 +103,7 @@ namespace BDD_Taller1
                     "Producto no encontrado.");
         }
 
-        // COMPRA
+        
         public void RegistrarCompra(
             string codigo, int cantidad,
             decimal costoUnitario, string proveedor)
@@ -123,7 +123,7 @@ namespace BDD_Taller1
                 total, p.Stock));
         }
 
-        // VENTA
+        
         public decimal RegistrarVenta(
             string codigo, int cantidad, string cliente)
         {
@@ -152,7 +152,7 @@ namespace BDD_Taller1
             return total;
         }
 
-        // KARDEX
+        
         public void MostrarKardex(string codigo)
         {
             ObtenerProducto(codigo);
@@ -169,7 +169,7 @@ namespace BDD_Taller1
             }
         }
 
-        // REPORTE DE VENTAS
+        
         public void ReporteVentas(DateTime desde, DateTime hasta)
         {
             if (desde.Date > hasta.Date)
@@ -204,7 +204,7 @@ namespace BDD_Taller1
             }
         }
 
-        // RECONSTRUIR HISTORIAL AL CARGAR JSON
+        
         public void CargarMovimientos(IEnumerable<Movimiento> historial)
         {
             if (movimientos.Count > 0 ||

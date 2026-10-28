@@ -63,6 +63,8 @@ namespace BDD_Taller1
 
             string json = JsonSerializer.Serialize(datos, opciones);
             File.WriteAllText(Ruta, json);
+            string rutaCompleta = Path.GetFullPath(Ruta);
+
         }
 
         public static Inventario Cargar()
